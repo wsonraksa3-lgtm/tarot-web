@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<meta name="theme-color" content="#12091f">
+
+<title>ดูหมอกับพี่หมี | เปิดไพ่ 3 ใบ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:"Kanit",sans-serif;
+
+    color:#fff;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(168,76,255,.28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 100% 80%,
+            rgba(255,65,181,.20),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            #0d0717 0%,
+            #180a29 50%,
+            #0c0615 100%
+        );
+
+    overflow-x:hidden;
+}
+
+button,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app{
+
+    width:100%;
+
+    max-width:720px;
+
+    margin:auto;
+
+    padding:
+        20px
+        15px
+        45px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
+    text-align:center;
+
+    padding:
+        8px
+        5px
+        20px;
+}
+
+.logo{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffe38a,
+            #ff8dde,
+            #a88cff
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+
+    margin-top:7px;
+
+    color:#cfc1dc;
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.main-panel{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:24px;
+
+    background:
+        rgba(255,255,255,.065);
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.28);
+
+    backdrop-filter:blur(14px);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title{
+
+    margin-bottom:10px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    color:#f5ebff;
+}
+
+
+/* =========================================================
+   TOPICS
+========================================================= */
+
+.topic-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:9px;
+
+    margin-bottom:20px;
+}
+
+.topic-btn{
+
+    min-height:45px;
+
+    border:1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:13px;
+
+    color:#eee;
+
+    background:
+        rgba(255,255,255,.06);
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s,
+        background .2s,
+        border .2s;
+}
+
+.topic-btn:active{
+
+    transform:scale(.97);
+}
+
+.topic-btn.active{
+
+    color:#fff;
+
+    border-color:
+        rgba(212,126,255,.6);
+
+    background:
+        linear-gradient(
+            135deg,
+            #874cff,
+            #e63cb9
+        );
+
+    box-shadow:
+        0 6px 20px
+        rgba(184,70,255,.28);
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.question-title{
+
+    margin-bottom:9px;
+
+    font-size:16px;
+
+    font-weight:500;
+}
+
+textarea{
+
+    display:block;
+
+    width:100%;
+
+    min-height:110px;
+
+    padding:14px;
+
+    resize:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    color:#fff;
+
+    background:
+        rgba(0,0,0,.24);
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    transition:.2s;
+}
+
+textarea::placeholder{
+
+    color:#92879d;
+}
+
+textarea:focus{
+
+    border-color:
+        rgba(190,105,255,.7);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(190,105,255,.10);
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:9px;
+
+    margin-top:13px;
+}
+
+.main-btn{
+
+    width:100%;
+
+    min-height:54px;
+
+    border:0;
+
+    border-radius:15px;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b4dff,
+            #e43bb9
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(181,67,255,.30);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.main-btn:active{
+
+    transform:scale(.98);
+}
+
+.reset-btn{
+
+    width:100%;
+
+    min-height:45px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:13px;
+
+    color:#d9d0df;
+
+    background:
+        rgba(255,255,255,.055);
+
+    font-size:15px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   CARDS SECTION
+========================================================= */
+
+.cards-section{
+
+    margin-top:27px;
+}
+
+.cards-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:8px;
+
+    width:100%;
+}
+
+.card-box{
+
+    width:100%;
+
+    text-align:center;
+
+    min-width:0;
+}
+
+.position{
+
+    min-height:43px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:7px;
+
+    color:#e9dff1;
+
+    font-size:12px;
+
+    line-height:1.35;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card{
+
+    width:100%;
+
+    aspect-ratio:
+        1023 / 1538;
+
+    position:relative;
+
+    perspective:1000px;
+
+    border-radius:9px;
+}
+
+.card-inner{
+
+    width:100%;
+    height:100%;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .75s
+        cubic-bezier(.2,.75,.25,1);
+}
+
+.card.opened .card-inner{
+
+    transform:
+        rotateY(180deg);
+}
+
+
+/* =========================================================
+   CARD FRONT / BACK
+========================================================= */
+
+.card-back,
+.card-front{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:9px;
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+}
+
+.card-back{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(208,125,255,.18),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            145deg,
+            #29113f,
+            #0e0718
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.4);
+}
+
+.card-symbol{
+
+    font-size:30px;
+
+    color:#d6a1ff;
+
+    text-shadow:
+        0 0 18px
+        rgba(210,130,255,.9);
+}
+
+.card-front{
+
+    transform:
+        rotateY(180deg);
+
+    background:transparent;
+}
+
+.card-front img{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    margin:0;
+    padding:0;
+
+    object-fit:fill;
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.card-hint{
+
+    min-height:20px;
+
+    margin-top:5px;
+
+    color:#91879a;
+
+    font-size:10px;
+
+    line-height:1.2;
+}
+
+
+/* =========================================================
+   READING
+========================================================= */
+
+.reading{
+
+    display:none;
+
+    margin-top:28px;
+
+    animation:
+        fadeUp .65s ease;
+}
+
+.reading.show{
+
+    display:block;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.reading-header{
+
+    text-align:center;
+
+    margin-bottom:15px;
+}
+
+.reading-title{
+
+    font-size:23px;
+
+    font-weight:600;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffe18a,
+            #ff8fdc
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.reading-subtitle{
+
+    margin-top:3px;
+
+    color:#9d91a8;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   READING BOX
+========================================================= */
+
+.reading-box{
+
+    margin-bottom:10px;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(0,0,0,.18);
+}
+
+.reading-box h3{
+
+    margin:
+        0
+        0
+        7px;
+
+    font-size:16px;
+
+    color:#ffd977;
+}
+
+.reading-box p{
+
+    margin:0;
+
+    color:#eee;
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.copy-btn{
+
+    width:100%;
+
+    min-height:48px;
+
+    margin-top:2px;
+
+    border:0;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6152ff,
+            #ad4eff
+        );
+
+    font-size:15px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    padding-top:22px;
+
+    text-align:center;
+
+    color:#74697e;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media(min-width:600px){
+
+    .app{
+
+        max-width:850px;
+
+        padding:
+            35px
+            20px
+            60px;
+    }
+
+    .logo{
+
+        font-size:40px;
+    }
+
+    .main-panel{
+
+        padding:25px;
+    }
+
+    .topic-buttons{
+
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
+    .action-buttons{
+
+        grid-template-columns:
+            1fr 160px;
+    }
+
+    .position{
+
+        font-size:15px;
+
+        min-height:32px;
+    }
+
+    .card{
+
+        border-radius:13px;
+    }
+
+    .card-back,
+    .card-front{
+
+        border-radius:13px;
+    }
+
+    .card-symbol{
+
+        font-size:45px;
+    }
+
+    .card-hint{
+
+        font-size:12px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media(min-width:900px){
+
+    .app{
+
+        max-width:950px;
+    }
+
+    .cards-grid{
+
+        gap:18px;
+    }
+
+    .main-panel{
+
+        padding:30px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            🔮 ดูหมอกับพี่หมี
+        </div>
+
+        <div class="subtitle">
+            เปิดไพ่ 3 ใบ • ดูสถานการณ์ • ดูแนวโน้ม
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main-panel">
+
+
+        <!-- TOPIC -->
+
+        <div class="section-title">
+            เลือกเรื่องที่ต้องการถาม
+        </div>
+
+
+        <div class="topic-buttons">
+
+            <button
+                class="topic-btn active"
+                onclick="selectTopic(this,'ทั่วไป')">
+
+                🔮 ทั่วไป
+
+            </button>
+
+
+            <button
+                class="topic-btn"
+                onclick="selectTopic(this,'ความรัก')">
+
+                ❤️ ความรัก
+
+            </button>
+
+
+            <button
+                class="topic-btn"
+                onclick="selectTopic(this,'การงาน')">
+
+                💼 การงาน
+
+            </button>
+
+
+            <button
+                class="topic-btn"
+                onclick="selectTopic(this,'การเงิน')">
+
+                💰 การเงิน
+
+            </button>
+
+        </div>
+
+
+
+        <!-- QUESTION -->
+
+        <div class="question-title">
+
+            พิมพ์คำถามที่อยากรู้
+
+        </div>
+
+
+        <textarea
+            id="question"
+            maxlength="300"
+            placeholder="เช่น เขายังคิดถึงเราไหม? คนเก่าจะกลับมาไหม? งานที่สมัครจะได้ไหม? การเงินช่วงนี้เป็นอย่างไร?"></textarea>
+
+
+
+        <!-- BUTTON -->
+
+        <div class="action-buttons">
+
+
+            <button
+                class="main-btn"
+                onclick="startReading()">
+
+                ✨ เปิดไพ่ 3 ใบ
+
+            </button>
+
+
+            <button
+                class="reset-btn"
+                onclick="resetReading()">
+
+                ↻ เริ่มใหม่
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- CARDS -->
+
+        <section class="cards-section">
+
+
+            <div class="cards-grid">
+
+
+                <!-- CARD 1 -->
+
+                <div class="card-box">
+
+                    <div class="position">
+                        ① สถานการณ์
+                    </div>
+
+
+                    <div
+                        class="card"
+                        id="card0">
+
+                        <div class="card-inner">
+
+
+                            <div class="card-back">
+
+                                <div class="card-symbol">
+                                    ✦
+                                </div>
+
+                            </div>
+
+
+                            <div class="card-front">
+
+                                <img
+                                    id="img0"
+                                    src=""
+                                    alt="ไพ่ใบที่ 1">
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="card-hint"
+                        id="hint0">
+
+                        รอเปิดไพ่
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 2 -->
+
+                <div class="card-box">
+
+                    <div class="position">
+                        ② สิ่งที่กำลังเกิดขึ้น
+                    </div>
+
+
+                    <div
+                        class="card"
+                        id="card1">
+
+                        <div class="card-inner">
+
+
+                            <div class="card-back">
+
+                                <div class="card-symbol">
+                                    ✦
+                                </div>
+
+                            </div>
+
+
+                            <div class="card-front">
+
+                                <img
+                                    id="img1"
+                                    src=""
+                                    alt="ไพ่ใบที่ 2">
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="card-hint"
+                        id="hint1">
+
+                        รอเปิดไพ่
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 3 -->
+
+                <div class="card-box">
+
+                    <div class="position">
+                        ③ คำตอบ / แนวโน้ม
+                    </div>
+
+
+                    <div
+                        class="card"
+                        id="card2">
+
+                        <div class="card-inner">
+
+
+                            <div class="card-back">
+
+                                <div class="card-symbol">
+                                    ✦
+                                </div>
+
+                            </div>
+
+
+                            <div class="card-front">
+
+                                <img
+                                    id="img2"
+                                    src=""
+                                    alt="ไพ่ใบที่ 3">
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="card-hint"
+                        id="hint2">
+
+                        รอเปิดไพ่
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- READING -->
+
+        <section
+            class="reading"
+            id="reading">
+
+
+            <div class="reading-header">
+
+                <div class="reading-title">
+                    🔮 คำตอบจากไพ่
+                </div>
+
+                <div class="reading-subtitle">
+                    อ่านภาพรวมจากไพ่ทั้ง 3 ใบ
+                </div>
+
+            </div>
+
+
+
+            <div class="reading-box">
+
+                <h3>
+                    ✨ ภาพรวม
+                </h3>
+
+                <p id="overview"></p>
+
+            </div>
+
+
+
+            <div class="reading-box">
+
+                <h3>
+                    💬 สรุปตรงคำถาม
+                </h3>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+
+            <div class="reading-box">
+
+                <h3>
+                    🌙 คำแนะนำ
+                </h3>
+
+                <p id="advice"></p>
+
+            </div>
+
+
+
+            <button
+                class="copy-btn"
+                onclick="copyReading()">
+
+                📋 คัดลอกคำทำนาย
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <div class="footer">
+
+        ดูหมอกับพี่หมี 🔮
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================================
+   CONFIG
+========================================================= */
+
+const IMAGE_BASE = "./cards/";
+
+let selectedTopic = "ทั่วไป";
+
+let selectedCards = [];
+
+let openedCards = 0;
+
+
+
+/* =========================================================
+   DECK
+========================================================= */
+
+const deck = [
+
+    /* MAJOR ARCANA */
+
+    {name:"The Fool",file:"ar00.png",type:"major",score:1},
+    {name:"The Magician",file:"ar01.png",type:"major",score:2},
+    {name:"The High Priestess",file:"ar02.png",type:"major",score:1},
+    {name:"The Empress",file:"ar03.png",type:"major",score:2},
+    {name:"The Emperor",file:"ar04.png",type:"major",score:2},
+    {name:"The Hierophant",file:"ar05.png",type:"major",score:1},
+    {name:"The Lovers",file:"ar06.png",type:"major",score:2},
+    {name:"The Chariot",file:"ar07.png",type:"major",score:2},
+    {name:"Strength",file:"ar08.png",type:"major",score:2},
+    {name:"The Hermit",file:"ar09.png",type:"major",score:0},
+    {name:"Wheel of Fortune",file:"ar10.png",type:"major",score:1},
+    {name:"Justice",file:"ar11.png",type:"major",score:1},
+    {name:"The Hanged Man",file:"ar12.png",type:"major",score:-1},
+    {name:"Death",file:"ar13.png",type:"major",score:-1},
+    {name:"Temperance",file:"ar14.png",type:"major",score:1},
+    {name:"The Devil",file:"ar15.png",type:"major",score:-2},
+    {name:"The Tower",file:"ar16.png",type:"major",score:-2},
+    {name:"The Star",file:"ar17.png",type:"major",score:2},
+    {name:"The Moon",file:"ar18.png",type:"major",score:0},
+    {name:"The Sun",file:"ar19.png",type:"major",score:2},
+    {name:"Judgement",file:"ar20.png",type:"major",score:1},
+    {name:"The World",file:"ar21.png",type:"major",score:2},
+
+
+    /* WANDS */
+
+    {name:"Ace of Wands",file:"wa01.png",type:"wands",score:2},
+    {name:"Two of Wands",file:"wa02.png",type:"wands",score:1},
+    {name:"Three of Wands",file:"wa03.png",type:"wands",score:2},
+    {name:"Four of Wands",file:"wa04.png",type:"wands",score:2},
+    {name:"Five of Wands",file:"wa05.png",type:"wands",score:-1},
+    {name:"Six of Wands",file:"wa06.png",type:"wands",score:2},
+    {name:"Seven of Wands",file:"wa07.png",type:"wands",score:1},
+    {name:"Eight of Wands",file:"wa08.png",type:"wands",score:2},
+    {name:"Nine of Wands",file:"wa09.png",type:"wands",score:0},
+    {name:"Ten of Wands",file:"wa10.png",type:"wands",score:-1},
+    {name:"Page of Wands",file:"wa11.png",type:"wands",score:1},
+    {name:"Knight of Wands",file:"wa12.png",type:"wands",score:1},
+    {name:"Queen of Wands",file:"wa13.png",type:"wands",score:2},
+    {name:"King of Wands",file:"wa14.png",type:"wands",score:2},
+
+
+    /* CUPS */
+
+    {name:"Ace of Cups",file:"cu01.png",type:"cups",score:2},
+    {name:"Two of Cups",file:"cu02.png",type:"cups",score:2},
+    {name:"Three of Cups",file:"cu03.png",type:"cups",score:2},
+    {name:"Four of Cups",file:"cu04.png",type:"cups",score:-1},
+    {name:"Five of Cups",file:"cu05.png",type:"cups",score:-1},
+    {name:"Six of Cups",file:"cu06.png",type:"cups",score:1},
+    {name:"Seven of Cups",file:"cu07.png",type:"cups",score:0},
+    {name:"Eight of Cups",file:"cu08.png",type:"cups",score:-1},
+    {name:"Nine of Cups",file:"cu09.png",type:"cups",score:2},
+    {name:"Ten of Cups",file:"cu10.png",type:"cups",score:2},
+    {name:"Page of Cups",file:"cu11.png",type:"cups",score:1},
+    {name:"Knight of Cups",file:"cu12.png",type:"cups",score:2},
+    {name:"Queen of Cups",file:"cu13.png",type:"cups",score:2},
+    {name:"King of Cups",file:"cu14.png",type:"cups",score:2},
+
+
+    /* SWORDS */
+
+    {name:"Ace of Swords",file:"sw01.png",type:"swords",score:1},
+    {name:"Two of Swords",file:"sw02.png",type:"swords",score:0},
+    {name:"Three of Swords",file:"sw03.png",type:"swords",score:-2},
+    {name:"Four of Swords",file:"sw04.png",type:"swords",score:0},
+    {name:"Five of Swords",file:"sw05.png",type:"swords",score:-2},
+    {name:"Six of Swords",file:"sw06.png",type:"swords",score:1},
+    {name:"Seven of Swords",file:"sw07.png",type:"swords",score:-1},
+    {name:"Eight of Swords",file:"sw08.png",type:"swords",score:-1},
+    {name:"Nine of Swords",file:"sw09.png",type:"swords",score:-2},
+    {name:"Ten of Swords",file:"sw10.png",type:"swords",score:-2},
+    {name:"Page of Swords",file:"sw11.png",type:"swords",score:0},
+    {name:"Knight of Swords",file:"sw12.png",type:"swords",score:1},
+    {name:"Queen of Swords",file:"sw13.png",type:"swords",score:1},
+    {name:"King of Swords",file:"sw14.png",type:"swords",score:1},
+
+
+    /* PENTACLES */
+
+    {name:"Ace of Pentacles",file:"pe01.png",type:"pentacles",score:2},
+    {name:"Two of Pentacles",file:"pe02.png",type:"pentacles",score:1},
+    {name:"Three of Pentacles",file:"pe03.png",type:"pentacles",score:2},
+    {name:"Four of Pentacles",file:"pe04.png",type:"pentacles",score:0},
+    {name:"Five of Pentacles",file:"pe05.png",type:"pentacles",score:-2},
+    {name:"Six of Pentacles",file:"pe06.png",type:"pentacles",score:2},
+    {name:"Seven of Pentacles",file:"pe07.png",type:"pentacles",score:1},
+    {name:"Eight of Pentacles",file:"pe08.png",type:"pentacles",score:2},
+    {name:"Nine of Pentacles",file:"pe09.png",type:"pentacles",score:2},
+    {name:"Ten of Pentacles",file:"pe10.png",type:"pentacles",score:2},
+    {name:"Page of Pentacles",file:"pe11.png",type:"pentacles",score:1},
+    {name:"Knight of Pentacles",file:"pe12.png",type:"pentacles",score:1},
+    {name:"Queen of Pentacles",file:"pe13.png",type:"pentacles",score:2},
+    {name:"King of Pentacles",file:"pe14.png",type:"pentacles",score:2}
+
+];
+
+
+
+/* =========================================================
+   TOPIC
+========================================================= */
+
+function selectTopic(button,topic){
+
+    document
+        .querySelectorAll(".topic-btn")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+    button.classList.add("active");
+
+    selectedTopic = topic;
+
+}
+
+
+
+/* =========================================================
+   START READING
+========================================================= */
+
+function startReading(){
+
+    const question =
+        document
+            .getElementById("question")
+            .value
+            .trim();
+
+
+    if(!question){
+
+        alert(
+            "กรุณาพิมพ์คำถามก่อนเปิดไพ่ครับ"
+        );
+
+        document
+            .getElementById("question")
+            .focus();
+
+        return;
+    }
+
+
+    /* ซ่อนคำทำนายเดิม */
+
+    document
+        .getElementById("reading")
+        .classList.remove("show");
+
+
+    /* รีเซ็ต */
+
+    selectedCards = [];
+
+    openedCards = 0;
+
+
+    for(let i=0;i<3;i++){
+
+        document
+            .getElementById("card"+i)
+            .classList.remove("opened");
+
+
+        document
+            .getElementById("img"+i)
+            .src = "";
+
+
+        document
+            .getElementById("hint"+i)
+            .textContent =
+                "กำลังเตรียมไพ่...";
+
+    }
+
+
+    /* สุ่มไพ่ไม่ซ้ำ */
+
+    const shuffled =
+        [...deck].sort(
+            () => Math.random() - 0.5
+        );
+
+
+    selectedCards =
+        shuffled.slice(0,3);
+
+
+    /* ใส่รูป */
+
+    selectedCards.forEach(
+        (card,index)=>{
+
+            document
+                .getElementById("img"+index)
+                .src =
+                    IMAGE_BASE +
+                    card.file;
+
+        }
+    );
+
+
+    /*
+       เปิดใบที่ 1
+    */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("card0")
+            .classList.add("opened");
+
+
+        document
+            .getElementById("hint0")
+            .textContent =
+                "เปิดแล้ว";
+
+        openedCards = 1;
+
+    },250);
+
+
+
+    /*
+       เปิดใบที่ 2
+    */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("card1")
+            .classList.add("opened");
+
+
+        document
+            .getElementById("hint1")
+            .textContent =
+                "เปิดแล้ว";
+
+        openedCards = 2;
+
+    },850);
+
+
+
+    /*
+       เปิดใบที่ 3
+    */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("card2")
+            .classList.add("opened");
+
+
+        document
+            .getElementById("hint2")
+            .textContent =
+                "เปิดแล้ว";
+
+        openedCards = 3;
+
+    },1450);
+
+
+
+    /*
+       แสดงคำทำนาย
+    */
+
+    setTimeout(()=>{
+
+        generateReading();
+
+    },2200);
+
+}
+
+
+
+/* =========================================================
+   YES / NO QUESTION
+========================================================= */
+
+function isYesNoQuestion(question){
+
+    const patterns = [
+
+        "ไหม",
+        "มั้ย",
+        "หรือไม่",
+        "หรือเปล่า",
+        "รึเปล่า",
+        "ได้ไหม",
+        "จริงไหม",
+        "ใช่ไหม",
+        "คิดถึงไหม",
+        "รักไหม",
+        "ชอบไหม",
+        "กลับมาไหม",
+        "ติดต่อไหม",
+        "ทักมาไหม",
+        "สำเร็จไหม",
+        "ผ่านไหม",
+        "ได้หรือไม่",
+        "จะได้ไหม",
+        "มีโอกาสไหม",
+        "เป็นไปได้ไหม",
+        "เขาจะ",
+        "เธอจะ",
+        "เราจะ",
+        "จะกลับ",
+        "จะติดต่อ",
+        "จะทัก",
+        "จะคืนดี",
+        "จะกลับมา",
+        "จะได้",
+        "จะสำเร็จ"
+
+    ];
+
+    return patterns.some(
+        pattern =>
+            question.includes(pattern)
+    );
+
+}
+
+
+
+/* =========================================================
+   YES / NO ANSWER
+========================================================= */
+
+function getYesNoAnswer(cards){
+
+    const total =
+        cards.reduce(
+            (sum,card)=>
+                sum + card.score,
+            0
+        );
+
+
+    const names =
+        cards.map(card=>card.name);
+
+
+    if(names.includes("The Sun")){
+
+        return "มีแนวโน้มเป็น “ใช่” ค่อนข้างชัดครับ";
+
+    }
+
+
+    if(
+        names.includes("The Star") &&
+        total >= 1
+    ){
+
+        return "มีแนวโน้มเป็น “ใช่” และมีโอกาสพัฒนาไปในทางที่ดีครับ";
+
+    }
+
+
+    if(
+        names.includes("The Tower") &&
+        total <= -1
+    ){
+
+        return "แนวโน้มตอนนี้ออกไปทาง “ไม่ใช่” หรือมีอุปสรรคสำคัญครับ";
+
+    }
+
+
+    if(names.includes("The Moon")){
+
+        return "ตอนนี้ยังไม่สามารถฟันธงได้ชัดเจนครับ มีบางอย่างที่ยังไม่เปิดเผย";
+
+    }
+
+
+    if(total >= 2){
+
+        return "มีแนวโน้มเป็น “ใช่” ครับ";
+
+    }
+
+
+    if(total <= -2){
+
+        return "มีแนวโน้มเป็น “ไม่ใช่” หรือยังไม่เป็นไปตามที่หวังครับ";
+
+    }
+
+
+    return "ตอนนี้ยังไม่ชัดเจนครับ ต้องดูสถานการณ์เพิ่มเติมก่อน";
+
+}
+
+
+
+/* =========================================================
+   CARD MEANING
+========================================================= */
+
+function getCardMeaning(card){
+
+    const meanings = {
+
+        "The Fool":
+        "มีการเริ่มต้นใหม่ กล้าที่จะลอง แต่ยังมีความไม่แน่นอนอยู่",
+
+        "The Magician":
+        "มีโอกาสลงมือทำและเปลี่ยนสถานการณ์ได้ หากใช้จังหวะให้ถูก",
+
+        "The High Priestess":
+        "มีเรื่องที่ยังไม่ถูกพูดออกมา หรือมีความรู้สึกบางอย่างซ่อนอยู่",
+
+        "The Empress":
+        "สิ่งต่าง ๆ มีแนวโน้มเติบโต มีความเอาใจใส่และการดูแล",
+
+        "The Emperor":
+        "สถานการณ์ต้องการความชัดเจน การควบคุม และการตัดสินใจที่จริงจัง",
+
+        "The Hierophant":
+        "เรื่องนี้เกี่ยวข้องกับกฎ ระเบียบ ความเชื่อ หรือคำแนะนำจากคนอื่น",
+
+        "The Lovers":
+        "มีเรื่องของความสัมพันธ์ การเลือก และความรู้สึกที่มีความหมาย",
+
+        "The Chariot":
+        "สถานการณ์กำลังเดินหน้า แต่ต้องมีความตั้งใจและควบคุมทิศทาง",
+
+        "Strength":
+        "ต้องใช้ความใจเย็น ความอดทน และควบคุมอารมณ์",
+
+        "The Hermit":
+        "มีการถอยออกมาคิด ทบทวน หรือใช้เวลาอยู่กับตัวเอง",
+
+        "Wheel of Fortune":
+        "สถานการณ์กำลังเปลี่ยนและมีจังหวะใหม่เข้ามา",
+
+        "Justice":
+        "เรื่องนี้ต้องดูตามความจริง เหตุผล และผลของการกระทำ",
+
+        "The Hanged Man":
+        "สถานการณ์ยังหยุดนิ่ง ต้องรอหรือเปลี่ยนมุมมอง",
+
+        "Death":
+        "กำลังมีการเปลี่ยนแปลงครั้งสำคัญ บางอย่างต้องจบเพื่อเริ่มใหม่",
+
+        "Temperance":
+        "ต้องค่อย ๆ ปรับสมดุลและไม่เร่งรัดสถานการณ์",
+
+        "The Devil":
+        "มีความผูกพัน ความกังวล หรือสิ่งที่ทำให้หลุดออกจากสถานการณ์ได้ยาก",
+
+        "The Tower":
+        "อาจเกิดการเปลี่ยนแปลงแบบกะทันหัน หรือความจริงบางอย่างถูกเปิดเผย",
+
+        "The Star":
+        "มีความหวังและโอกาสที่สถานการณ์จะค่อย ๆ ดีขึ้น",
+
+        "The Moon":
+        "ยังมีความไม่ชัดเจน ความกังวล หรือข้อมูลบางอย่างที่ยังไม่เปิดเผย",
+
+        "The Sun":
+        "มีความชัดเจน ข่าวดี และพลังที่ทำให้เรื่องต่าง ๆ เดินหน้า",
+
+        "Judgement":
+        "กำลังเข้าสู่ช่วงตัดสินใจ ทบทวน หรือได้รับคำตอบบางอย่าง",
+
+        "The World":
+        "เรื่องกำลังเข้าสู่บทสรุปหรือปิดจบอย่างเป็นรูปธรรม",
+
+        "Ace of Cups":
+        "มีความรู้สึกใหม่ ความสุข หรือโอกาสทางอารมณ์เกิดขึ้น",
+
+        "Two of Cups":
+        "มีการเชื่อมโยง ความเข้าใจ หรือความสัมพันธ์ที่ดี",
+
+        "Three of Cups":
+        "มีการพูดคุย การพบปะ หรือได้รับการสนับสนุนจากคนรอบตัว",
+
+        "Four of Cups":
+        "มีความลังเล เบื่อ หรือยังไม่เห็นคุณค่าของโอกาสตรงหน้า",
+
+        "Five of Cups":
+        "ยังมีความเสียใจหรือผิดหวังจากเรื่องที่ผ่านมา",
+
+        "Six of Cups":
+        "เรื่องเก่า คนเก่า หรือความทรงจำในอดีตมีอิทธิพล",
+
+        "Seven of Cups":
+        "มีหลายทางเลือก แต่ยังตัดสินใจไม่ได้อย่างชัดเจน",
+
+        "Eight of Cups":
+        "มีแนวโน้มถอยออกจากสิ่งเดิมหรือเดินไปหาสิ่งใหม่",
+
+        "Nine of Cups":
+        "มีโอกาสสมหวังหรือได้สิ่งที่ต้องการ",
+
+        "Ten of Cups":
+        "ความสัมพันธ์และบรรยากาศโดยรวมมีแนวโน้มอบอุ่นและลงตัว",
+
+        "Page of Cups":
+        "มีข่าวหรือข้อความเกี่ยวกับความรู้สึกเข้ามา",
+
+        "Knight of Cups":
+        "มีคนหรือสถานการณ์ที่เข้ามาด้วยความรู้สึกและความตั้งใจ",
+
+        "Queen of Cups":
+        "ความรู้สึกมีความลึกและมีความเข้าใจอีกฝ่าย",
+
+        "King of Cups":
+        "มีความรู้สึกอยู่ แต่พยายามควบคุมและเก็บอารมณ์ไว้",
+
+        "Ace of Wands":
+        "มีโอกาสใหม่และแรงผลักดันให้เริ่มลงมือ",
+
+        "Two of Wands":
+        "กำลังวางแผนและมองหาทางเลือก",
+
+        "Three of Wands":
+        "สิ่งที่ทำไว้กำลังเริ่มเห็นผลและมีโอกาสขยายตัว",
+
+        "Four of Wands":
+        "มีความมั่นคง ความสำเร็จ หรือบรรยากาศที่ดี",
+
+        "Five of Wands":
+        "มีการแข่งขัน ความเห็นต่าง หรือความวุ่นวาย",
+
+        "Six of Wands":
+        "มีโอกาสได้รับการยอมรับหรือเห็นผลสำเร็จ",
+
+        "Seven of Wands":
+        "ต้องยืนหยัดและปกป้องสิ่งที่ตัวเองต้องการ",
+
+        "Eight of Wands":
+        "เรื่องต่าง ๆ เคลื่อนไหวเร็ว มีข่าวหรือการติดต่อ",
+
+        "Nine of Wands":
+        "ผ่านอะไรมาเยอะและยังต้องอดทนอีกเล็กน้อย",
+
+        "Ten of Wands":
+        "มีภาระและความรับผิดชอบค่อนข้างมาก",
+
+        "Page of Wands":
+        "มีข่าวใหม่หรือโอกาสใหม่ที่น่าสนใจ",
+
+        "Knight of Wands":
+        "มีการเคลื่อนไหวเร็ว แต่บางครั้งอาจเปลี่ยนใจง่าย",
+
+        "Queen of Wands":
+        "มีความมั่นใจ เสน่ห์ และความสามารถในการดึงสถานการณ์กลับมา",
+
+        "King of Wands":
+        "มีความทะเยอทะยานและความตั้งใจที่จะทำให้สำเร็จ",
+
+        "Ace of Swords":
+        "กำลังจะได้ความชัดเจนหรือคำตอบตรง ๆ",
+
+        "Two of Swords":
+        "ยังมีความลังเลและยังไม่ตัดสินใจ",
+
+        "Three of Swords":
+        "มีความเจ็บปวด ความผิดหวัง หรือเรื่องที่ต้องยอมรับ",
+
+        "Four of Swords":
+        "ต้องพักและรอดูสถานการณ์ก่อน",
+
+        "Five of Swords":
+        "มีความขัดแย้งหรือสถานการณ์ที่ต่างฝ่ายต่างต้องการเอาชนะ",
+
+        "Six of Swords":
+        "กำลังค่อย ๆ ออกจากปัญหาไปสู่สถานการณ์ที่สงบกว่า",
+
+        "Seven of Swords":
+        "มีบางอย่างไม่ถูกพูดตรง ๆ หรือมีการหลบเลี่ยง",
+
+        "Eight of Swords":
+        "รู้สึกติดอยู่กับสถานการณ์ แต่ยังมีทางออก",
+
+        "Nine of Swords":
+        "มีความกังวลและคิดมากเกี่ยวกับเรื่องนี้",
+
+        "Ten of Swords":
+        "เรื่องเดิมกำลังถึงจุดสิ้นสุดและต้องเริ่มมองทางใหม่",
+
+        "Page of Swords":
+        "มีการสังเกต ติดตาม หรือรอฟังข่าว",
+
+        "Knight of Swords":
+        "มีการเคลื่อนไหวหรือการพูดคุยที่รวดเร็ว",
+
+        "Queen of Swords":
+        "ต้องใช้เหตุผลและความชัดเจนมากกว่าอารมณ์",
+
+        "King of Swords":
+        "สถานการณ์จะตัดสินจากเหตุผล ข้อมูล และข้อเท็จจริง",
+
+        "Ace of Pentacles":
+        "มีโอกาสใหม่ที่จับต้องได้และมีโอกาสพัฒนา",
+
+        "Two of Pentacles":
+        "ต้องจัดการหลายเรื่องพร้อมกันและรักษาสมดุล",
+
+        "Three of Pentacles":
+        "มีการร่วมมือและการทำงานร่วมกับคนอื่น",
+
+        "Four of Pentacles":
+        "ยังมีการเก็บไว้ ไม่ยอมปล่อย หรือระวังเรื่องความมั่นคง",
+
+        "Five of Pentacles":
+        "รู้สึกขาดหรือไม่มั่นคง แต่สถานการณ์ยังมีทางแก้",
+
+        "Six of Pentacles":
+        "มีการช่วยเหลือ การให้ หรือได้รับสิ่งตอบแทน",
+
+        "Seven of Pentacles":
+        "ต้องรอผลจากสิ่งที่ทำไว้",
+
+        "Eight of Pentacles":
+        "ความสำเร็จมาจากการลงมือทำอย่างต่อเนื่อง",
+
+        "Nine of Pentacles":
+        "มีความมั่นคงและพึ่งพาตัวเองได้มากขึ้น",
+
+        "Ten of Pentacles":
+        "มีแนวโน้มของความมั่นคงระยะยาว",
+
+        "Page of Pentacles":
+        "มีข่าวหรือโอกาสใหม่เกี่ยวกับงาน เงิน หรือการเรียนรู้",
+
+        "Knight of Pentacles":
+        "ค่อย ๆ เดินหน้า ช้าแต่มีความมั่นคง",
+
+        "Queen of Pentacles":
+        "มีความมั่นคงและการจัดการเรื่องชีวิตได้ดี",
+
+        "King of Pentacles":
+        "มีพลังของความมั่นคง เงิน งาน และความสำเร็จทางวัตถุ"
+
+    };
+
+
+    return meanings[card.name] ||
+        "สถานการณ์กำลังเปลี่ยนแปลงและต้องดูภาพรวมประกอบกันครับ";
+
+}
+
+
+
+/* =========================================================
+   GENERATE READING
+========================================================= */
+
+function generateReading(){
+
+    if(selectedCards.length !== 3){
+
+        return;
+    }
+
+
+    const question =
+        document
+            .getElementById("question")
+            .value
+            .trim();
+
+
+    const total =
+        selectedCards.reduce(
+            (sum,card)=>
+                sum + card.score,
+            0
+        );
+
+
+    const meanings =
+        selectedCards.map(
+            card =>
+                getCardMeaning(card)
+        );
+
+
+    let overview = "";
+    let summary = "";
+    let advice = "";
+
+
+    /* =====================================================
+       YES / NO
+    ===================================================== */
+
+    if(isYesNoQuestion(question)){
+
+        const answer =
+            getYesNoAnswer(
+                selectedCards
+            );
+
+
+        overview =
+            `ไพ่ทั้ง 3 ใบสะท้อนว่า ${meanings[0]} ` +
+            `${meanings[1]} และ ${meanings[2]} ` +
+            `เมื่อนำมาดูรวมกัน เรื่องนี้มีพลังของสถานการณ์ที่กำลังเปลี่ยนแปลง ` +
+            `และคำตอบไม่ได้อยู่ที่ไพ่ใบใดใบหนึ่งเพียงใบเดียวครับ`;
+
+
+        summary =
+            `${answer} ` +
+            `โดยภาพรวม ไพ่บอกให้ดูทั้งสิ่งที่เกิดขึ้นตอนนี้ ` +
+            `และสิ่งที่อีกฝ่ายหรือสถานการณ์กำลังแสดงออกจริง ๆ ควบคู่กันครับ`;
+
+
+        advice =
+
+            total >= 2
+
+            ?
+
+            "เดินหน้าได้ครับ แต่ควรค่อย ๆ ดูการกระทำและสถานการณ์จริงประกอบ อย่ารีบคาดหวังผลทันที"
+
+            :
+
+            total <= -2
+
+            ?
+
+            "ช่วงนี้อย่าเพิ่งฝืนสถานการณ์ครับ ให้เวลาและดูการเปลี่ยนแปลงก่อน แล้วค่อยตัดสินใจอีกครั้ง"
+
+            :
+
+            "ตอนนี้ยังมีบางอย่างที่ต้องรอให้ชัดเจนขึ้นครับ อย่าเพิ่งรีบสรุปจากความรู้สึกเพียงอย่างเดียว";
+
+    }
+
+
+    /* =====================================================
+       GENERAL
+    ===================================================== */
+
+    else{
+
+        const counts = {
+
+            cups:0,
+            wands:0,
+            swords:0,
+            pentacles:0
+
+        };
+
+
+        selectedCards.forEach(
+            card=>{
+
+                if(
+                    counts[card.type] !== undefined
+                ){
+
+                    counts[card.type]++;
+
+                }
+
+            }
+        );
+
+
+        let dominant =
+            "หลายด้านกำลังเคลื่อนไหวพร้อมกัน";
+
+
+        if(counts.cups >= 2){
+
+            dominant =
+                "เรื่องความรู้สึก ความสัมพันธ์ และสิ่งที่อยู่ในใจมีอิทธิพลค่อนข้างมาก";
+
+        }
+
+        else if(counts.wands >= 2){
+
+            dominant =
+                "เรื่องการลงมือทำ การเปลี่ยนแปลง และการเดินหน้ามีอิทธิพลค่อนข้างมาก";
+
+        }
+
+        else if(counts.swords >= 2){
+
+            dominant =
+                "เรื่องความคิด การตัดสินใจ และความกังวลมีอิทธิพลค่อนข้างมาก";
+
+        }
+
+        else if(counts.pentacles >= 2){
+
+            dominant =
+                "เรื่องงาน เงิน ความมั่นคง และสิ่งที่จับต้องได้มีอิทธิพลค่อนข้างมาก";
+
+        }
+
+
+        overview =
+            `${dominant} ไพ่ใบแรกสะท้อน ${meanings[0]} ` +
+            `ขณะที่ไพ่ใบที่สองบอกว่า ${meanings[1]} ` +
+            `และไพ่ใบสุดท้ายชี้ว่า ${meanings[2]}`;
+
+
+        if(total >= 3){
+
+            summary =
+                "ภาพรวมถือว่ามีพลังค่อนข้างดีครับ เรื่องที่ถามมีแนวโน้มเดินหน้า หรือเริ่มเห็นช่องทางที่ดีขึ้น แต่ผลจะชัดแค่ไหนยังขึ้นอยู่กับการลงมือทำด้วย";
+
+        }
+
+        else if(total <= -3){
+
+            summary =
+                "ช่วงนี้มีบางอย่างติดขัดหรือยังไม่เป็นไปตามที่หวังครับ ไพ่ไม่ได้บอกว่าทุกอย่างจบ แต่บอกว่าต้องจัดการกับอุปสรรคบางอย่างก่อน";
+
+        }
+
+        else{
+
+            summary =
+                "ภาพรวมยังอยู่ในช่วงเปลี่ยนผ่านครับ มีทั้งด้านที่เปิดทางและด้านที่ต้องระวัง จึงควรค่อย ๆ ดูสถานการณ์ก่อนตัดสินใจครั้งสำคัญ";
+
+        }
+
+
+        advice =
+            "คำแนะนำจากไพ่คือให้ดูการกระทำจริงควบคู่กับความรู้สึกครับ ถ้ามีเรื่องไหนที่ยังไม่ชัด อย่าเพิ่งรีบสรุป ให้เวลาและข้อมูลเพิ่มเติมช่วยยืนยัน";
+
+    }
+
+
+    /* =====================================================
+       OUTPUT
+    ===================================================== */
+
+    document
+        .getElementById("overview")
+        .textContent = overview;
+
+
+    document
+        .getElementById("summary")
+        .textContent = summary;
+
+
+    document
+        .getElementById("advice")
+        .textContent = advice;
+
+
+    document
+        .getElementById("reading")
+        .classList.add("show");
+
+
+    /* เลื่อนให้เห็นคำทำนาย */
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("reading")
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+    },200);
+
+}
+
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetReading(){
+
+    selectedCards = [];
+
+    openedCards = 0;
+
+
+    document
+        .getElementById("reading")
+        .classList.remove("show");
+
+
+    for(let i=0;i<3;i++){
+
+        document
+            .getElementById("card"+i)
+            .classList.remove("opened");
+
+
+        document
+            .getElementById("img"+i)
+            .src = "";
+
+
+        document
+            .getElementById("hint"+i)
+            .textContent =
+                "รอเปิดไพ่";
+
+    }
+
+}
+
+
+
+/* =========================================================
+   COPY READING
+========================================================= */
+
+function copyReading(){
+
+    const question =
+        document
+            .getElementById("question")
+            .value
+            .trim();
+
+
+    const overview =
+        document
+            .getElementById("overview")
+            .textContent;
+
+
+    const summary =
+        document
+            .getElementById("summary")
+            .textContent;
+
+
+    const advice =
+        document
+            .getElementById("advice")
+            .textContent;
+
+
+    const text =
+
+`🔮 ดูหมอกับพี่หมี
+
+คำถาม:
+${question}
+
+✨ ภาพรวม
+${overview}
+
+💬 สรุปตรงคำถาม
+${summary}
+
+🌙 คำแนะนำ
+${advice}`;
+
+
+    if(
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+    ){
+
+        navigator.clipboard
+            .writeText(text)
+            .then(()=>{
+
+                alert(
+                    "คัดลอกคำทำนายแล้วครับ"
+                );
+
+            })
+            .catch(()=>{
+
+                fallbackCopy(text);
+
+            });
+
+    }
+
+    else{
+
+        fallbackCopy(text);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FALLBACK COPY
+========================================================= */
+
+function fallbackCopy(text){
+
+    const textarea =
+        document.createElement("textarea");
+
+    textarea.value = text;
+
+    document.body.appendChild(textarea);
+
+    textarea.select();
+
+    document.execCommand("copy");
+
+    textarea.remove();
+
+    alert(
+        "คัดลอกคำทำนายแล้วครับ"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
